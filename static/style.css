@@ -1,0 +1,14 @@
+canvas {  
+    border: solid 1px black;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.pixelated {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-crisp-edges;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
