@@ -1,12 +1,19 @@
-<html>
+<html id="debug">
     <head>
         <link rel="stylesheet" href="./static/style.css">
     </head>
     <body>
-         <canvas id="canvas-background" class="pixelated" width="800" height="600"></canvas>
+        <canvas id="canvas-background" class="pixelated" width="800" height="600"></canvas>
         <canvas id="canvas-slices" class="pixelated" width="800" height="600"></canvas>
+        <div id="intro">
+            <canvas id="canvas-intro-title" class="pixelated" width="104" height="51"></canvas>
+            <canvas id="canvas-intro" class="pixelated" width="86" height="59"></canvas>
+        </div>
     </body>
+    <script src="./static/loadimages.js"></script>
+    <script src="./static/intro.js"></script>
     <script src="./static/colision.js"></script>
     <script src="./static/animation.js"></script>
     <!--<script src="./static/pic.js"></script>-->
+    <script src="./static/debug.js"></script>
 </html>
