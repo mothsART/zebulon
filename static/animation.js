@@ -1,8 +1,8 @@
 let zebulon = {
     x: 50,
-    y: 200,
-    width: 50,
-    height: 50,
+    y: 205,
+    width: 36,
+    height: 40,
     canvas: document.getElementById('canvas-slices').getContext('2d')
 }
 
@@ -10,11 +10,13 @@ let images = {
     zebulon: './static/zebulon.png'
 };
 
-init_gamer_x = 50;
-init_gamer_y = 200;
 loadImages(images, function(images) {
     zebulon.canvas.drawImage(
-        images.zebulon, zebulon.x, zebulon.y, 200, 50
+        images.zebulon,
+        zebulon.x,
+        zebulon.y,
+        zebulon.width,
+        zebulon.height
     );
 });
 
@@ -47,10 +49,27 @@ function checkKey(e) {
         console.log('droite');
         move(zebulon, 10, 0);
     }
+    let catch_item = item_collision(zebulon, items[0]);
     loadImages(images, function(images) {
         zebulon.canvas.clearRect(0, 0, 800, 600);
         zebulon.canvas.drawImage(
-            images.zebulon, zebulon.x, zebulon.y, 200, 50
+            images.zebulon,
+            zebulon.x,
+            zebulon.y,
+            zebulon.width,
+            zebulon.height
         );
+    });
+    loadImages(items_img, function(items_img) {
+        for (item of items) {
+            if (item_collision(zebulon, item)) {
+                items_canvas.clearRect(
+                    item.x,
+                    item.y,
+                    item.width,
+                    item.height
+                );
+            }
+        }
     });
 }

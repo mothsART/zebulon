@@ -45,7 +45,6 @@ function colision_draw(path) {
         ctx.lineTo(rec.x, rec.y + rec.height);
     }
     ctx.fill();
-    console.log('pouf');
     
     ctx.fillStyle = "#FF0000";
     ctx.fillRect(25, 25, 50, 50);
@@ -57,6 +56,34 @@ function point_in_rec(x, y, rec_path) {
         && x <= rec_path.x + rec_path.width
         && y >= rec_path.y
         && y <= rec_path.y + rec_path.height
+    ) {
+        return true;
+    }
+    return false;
+}
+
+function item_collision(rec_player, item) {
+    if (
+        point_in_rec(
+            item.x,
+            item.y,
+            rec_player
+        )
+        || point_in_rec(
+            item.x + item.width,
+            item.y,
+            rec_player
+        )
+        || point_in_rec(
+            item.x + item.width,
+            item.y + item.height,
+            rec_player
+        )
+        || point_in_rec(
+            item.x,
+            item.y + item.height,
+            rec_player
+        )
     ) {
         return true;
     }
