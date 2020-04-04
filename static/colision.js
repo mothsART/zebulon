@@ -1,34 +1,69 @@
-/*let colision_path_level_1 = [
-    [ 50, 200],
-    [ 50, 250],
-    [ 250, 250],
-    [ 250, 400],
-    [ 300, 400],
-    [ 300, 250],
-    [ 600, 250],
-    [ 600, 200],
-    [ 400, 200],
-    [ 400, 100],
-    [ 500, 100],
-    [ 500, 50],
-    [ 350, 50],
-    [ 350, 200],
-    [ 150, 200],
-    [ 150, 100],
-    [ 100, 100],
-    [ 100, 200]
-]*/
-
 let colision_path_level_1 = [
+    // horizontal
     {
-        x: 50,
-        y: 200,
-        width: 600,
+        x: 0,
+        y: 100,
+        width: 800,
         height: 50
     },
     {
+        x: 0,
+        y: 200,
+        width: 800,
+        height: 50
+    },
+    {
+        x: 0,
+        y: 350,
+        width: 800,
+        height: 50
+    },
+    {
+        x: 0,
+        y: 450,
+        width: 800,
+        height: 50
+    },
+    {
+        x: 0,
+        y: 550,
+        width: 800,
+        height: 50
+    },
+    // vertical
+    {
         x: 150,
         y: 100,
+        width: 50,
+        height: 150
+    },
+    {
+        x: 500,
+        y: 200,
+        width: 50,
+        height: 200
+    },
+    {
+        x: 650,
+        y: 100,
+        width: 50,
+        height: 150
+    },
+    {
+        x: 100,
+        y: 350,
+        width: 50,
+        height: 150
+    },
+    {
+        x: 650,
+        y: 350,
+        width: 50,
+        height: 150
+    },
+    {
+        x: 500,
+        y: 450,
         width: 50,
         height: 150
     }
@@ -45,9 +80,6 @@ function colision_draw(path) {
         ctx.lineTo(rec.x, rec.y + rec.height);
     }
     ctx.fill();
-    
-    ctx.fillStyle = "#FF0000";
-    ctx.fillRect(25, 25, 50, 50);
 }
 
 function point_in_rec(x, y, rec_path) {

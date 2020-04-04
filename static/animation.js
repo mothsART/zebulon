@@ -1,6 +1,6 @@
 let zebulon = {
-    x: 50,
-    y: 205,
+    x: 10,
+    y: 355,
     width: 36,
     height: 40,
     canvas: document.getElementById('canvas-slices').getContext('2d')
