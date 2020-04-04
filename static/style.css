@@ -13,6 +13,7 @@ canvas {
     image-rendering: crisp-edges;
 }
 
+/* Intro */
 #intro {
     background: white;
     width: 100%;
@@ -62,3 +63,10 @@ canvas {
         right: -30%;
     }
 }
+
+/* game */
+
+#score {
+    margin-left: 400px;
+}
+

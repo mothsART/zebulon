@@ -2,67 +2,26 @@ let items_canvas = document.getElementById('canvas-items').getContext('2d');
 
 let items_img = ['./static/ice.png'];
 
+function create_ice_item(x, y) {
+    return {
+        x: x,
+        y: y,
+        width: 20,
+        height: 31
+    };
+}
+
 let items = [
-    {
-        x: 20,
-        y: 110,
-        width: 20,
-        height: 31
-    },
-    {
-        x: 80,
-        y: 210,
-        width: 20,
-        height: 31
-    },
-    {
-        x: 350,
-        y: 210,
-        width: 20,
-        height: 31
-    },
-    {
-        x: 760,
-        y: 210,
-        width: 20,
-        height: 31
-    },
-    {
-        x: 250,
-        y: 360,
-        width: 20,
-        height: 31
-    },
-    {
-        x: 760,
-        y: 360,
-        width: 20,
-        height: 31
-    },
-    {
-        x: 350,
-        y: 460,
-        width: 20,
-        height: 31
-    },
-    {
-        x: 50,
-        y: 560,
-        width: 20,
-        height: 31
-    },
-    {
-        x: 350,
-        y: 560,
-        width: 20,
-        height: 31
-    },
-    {
-        x: 760,
-        y: 560,
-        width: 20,
-        height: 31
-    },
+    create_ice_item(20, 110),
+    create_ice_item(100, 210),
+    create_ice_item(350, 210),
+    create_ice_item(760, 210),
+    create_ice_item(250, 360),
+    create_ice_item(760, 360),
+    create_ice_item(350, 460),
+    create_ice_item(50, 560),
+    create_ice_item(350, 560),
+    create_ice_item(760, 560)
 ];
 
 loadImages(items_img, function(items_img) {

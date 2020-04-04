@@ -31,25 +31,31 @@ function move(zebulon, x, y) {
     }
 }
 
+let nb_items = document.getElementById('nb-items');
+function increment_score() {
+    nb_items.innerText = parseInt(nb_items.innerText) + 1;
+}
+let catching_items = [];
+
 function checkKey(e) {
     e = e || window.event;
     if (e.keyCode == '38') {
-        console.log('haut');
+        //console.log('top');
         move(zebulon, 0, -10);
     }
     else if (e.keyCode == '40') {
-        console.log('bas');
+        //console.log('bottom');
         move(zebulon, 0, 10);
     }
     else if (e.keyCode == '37') {
-        console.log('gauche');
+        //console.log('left');
         move(zebulon, -10, 0);
     }
     else if (e.keyCode == '39') {
-        console.log('droite');
+        //console.log('right');
         move(zebulon, 10, 0);
     }
-    let catch_item = item_collision(zebulon, items[0]);
+    let catch_item = item_collision(zebulon, catching_items, items[0]);
     loadImages(images, function(images) {
         zebulon.canvas.clearRect(0, 0, 800, 600);
         zebulon.canvas.drawImage(
@@ -62,7 +68,8 @@ function checkKey(e) {
     });
     loadImages(items_img, function(items_img) {
         for (item of items) {
-            if (item_collision(zebulon, item)) {
+            if (item_collision(zebulon, catching_items, item)) {
+                increment_score();
                 items_canvas.clearRect(
                     item.x,
                     item.y,

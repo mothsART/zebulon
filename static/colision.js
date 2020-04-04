@@ -94,7 +94,14 @@ function point_in_rec(x, y, rec_path) {
     return false;
 }
 
-function item_collision(rec_player, item) {
+function item_collision(rec_player, catching_items, item) {
+    if (catching_items !== []) {
+        for (catching_item of catching_items) {
+            if (item === catching_item) {
+                return false;
+            }
+        }
+    }
     if (
         point_in_rec(
             item.x,
@@ -117,6 +124,7 @@ function item_collision(rec_player, item) {
             rec_player
         )
     ) {
+        catching_items.push(item);
         return true;
     }
     return false;
