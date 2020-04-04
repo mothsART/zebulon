@@ -94,12 +94,38 @@ function point_in_rec(x, y, rec_path) {
     return false;
 }
 
+function gate_colision(rec_player, gate) {
+    if (
+        point_in_rec(
+            rec_player.x,
+            rec_player.y,
+            gate
+        )
+        || point_in_rec(
+            rec_player.x + rec_player.width,
+            rec_player.y,
+            gate
+        )
+        || point_in_rec(
+            rec_player.x + rec_player.width,
+            rec_player.y + rec_player.height,
+            gate
+        )
+        || point_in_rec(
+            rec_player.x,
+            rec_player.y + rec_player.height,
+            gate
+        )
+    ) {
+        return true;
+    }
+    return false;
+}
+
 function item_collision(rec_player, catching_items, item) {
-    if (catching_items !== []) {
-        for (catching_item of catching_items) {
-            if (item === catching_item) {
-                return false;
-            }
+    for (catching_item of catching_items) {
+        if (item === catching_item) {
+            return false;
         }
     }
     if (

@@ -12,7 +12,7 @@ function create_ice_item(x, y) {
 }
 
 let items = [
-    create_ice_item(20, 110),
+    create_ice_item(40, 110),
     create_ice_item(100, 210),
     create_ice_item(350, 210),
     create_ice_item(760, 210),

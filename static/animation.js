@@ -36,6 +36,7 @@ function increment_score() {
     nb_items.innerText = parseInt(nb_items.innerText) + 1;
 }
 let catching_items = [];
+let gate_is_visible = false;
 
 function checkKey(e) {
     e = e || window.event;
@@ -55,7 +56,6 @@ function checkKey(e) {
         //console.log('right');
         move(zebulon, 10, 0);
     }
-    let catch_item = item_collision(zebulon, catching_items, items[0]);
     loadImages(images, function(images) {
         zebulon.canvas.clearRect(0, 0, 800, 600);
         zebulon.canvas.drawImage(
@@ -71,6 +71,12 @@ function checkKey(e) {
             if (item_collision(zebulon, catching_items, item)) {
                 increment_score();
                 items_canvas.clearRect(
+                    20,
+                    110,
+                    20,
+                    31
+                );
+                items_canvas.clearRect(
                     item.x,
                     item.y,
                     item.width,
@@ -79,4 +85,19 @@ function checkKey(e) {
             }
         }
     });
+    if (!gate_is_visible && catching_items.length === items.length) {
+        gate_is_visible = true;
+        loadImages(gate_img, function(gate_img) {
+            gate_canvas.drawImage(
+                gate_img[0],
+                gate.x,
+                gate.y,
+                gate.width,
+                gate.height
+            );
+        });
+    }
+    if (gate_is_visible && gate_colision(zebulon, gate)) {
+        console.log('win!');
+    }
 }
