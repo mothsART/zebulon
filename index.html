@@ -1,20 +1,38 @@
-<html id="debug">
+<html>
     <head>
+        <meta charset="utf-8">
         <link rel="stylesheet" href="./static/style.css">
     </head>
     <body>
-        <canvas id="canvas-background" class="pixelated" width="800" height="600"></canvas>
-        <canvas id="canvas-items" class="pixelated" width="800" height="600"></canvas>
-        <canvas id="canvas-slices" class="pixelated" width="800" height="600"></canvas>
-        <div id="score">
-            <span id="nb-items">0</span>
-            x
+        <div id="game">
+            <div class="container">
+                <canvas id="canvas-background" class="pixelated" width="800" height="600"></canvas>
+                <canvas id="canvas-items" class="pixelated" width="800" height="600"></canvas>
+                <canvas id="canvas-gate" class="pixelated" width="800" height="600"></canvas>
+                <canvas id="canvas-slices" class="pixelated" width="800" height="600"></canvas>
+                <div id="score">
+                    <span id="nb-items">0</span>
+                    x
+                </div>
+                <canvas id="canvas-score" class="pixelated" width="800" height="600"></canvas>
+            </div>
         </div>
-        <canvas id="canvas-score" class="pixelated" width="800" height="600"></canvas>
-        <canvas id="canvas-gate" class="pixelated" width="800" height="600"></canvas>
         <div id="intro">
-            <canvas id="canvas-intro-title" class="pixelated" width="104" height="51"></canvas>
-            <canvas id="canvas-intro" class="pixelated" width="86" height="59"></canvas>
+            <div class="container">
+                <div id="intro-text">
+                    <p>Tu es prêt ?</p>
+                    <p>
+                        Alors appui sur 
+                    </p>
+                    <button id="start-game" onclick="start_game();">
+                        commencer
+                    </button>
+                    <p>ou tape sur</p>
+                    <p>la touche <strong>[Entrée]</strong></p>
+                </div>
+                <canvas id="canvas-intro-title" class="pixelated" width="104" height="51"></canvas>
+                <canvas id="canvas-intro" class="pixelated" width="86" height="59"></canvas>
+            </div>
         </div>
     </body>
     <script src="./static/loadimages.js"></script>

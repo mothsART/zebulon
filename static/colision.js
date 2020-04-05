@@ -70,8 +70,8 @@ let colision_path_level_1 = [
 ]
 
 function colision_draw(path) {
-  let ctx = document.getElementById('canvas-background').getContext('2d');
-
+    console.log('dfjhgjhdg');
+    let ctx = document.getElementById('canvas-background').getContext('2d');
     ctx.beginPath();
     for (rec of path) {
         ctx.moveTo(rec.x, rec.y);
@@ -79,6 +79,7 @@ function colision_draw(path) {
         ctx.lineTo(rec.x + rec.width, rec.y + rec.height);
         ctx.lineTo(rec.x, rec.y + rec.height);
     }
+    ctx.fillStyle = "grey";
     ctx.fill();
 }
 

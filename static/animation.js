@@ -22,6 +22,10 @@ loadImages(images, function(images) {
 
 document.onkeydown = checkKey;
 
+function start_game() {
+    document.getElementById('intro').classList.add('hidden');
+}
+
 function move(zebulon, x, y) {
     zebulon.x += x;
     zebulon.y += y;
