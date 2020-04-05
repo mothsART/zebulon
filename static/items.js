@@ -12,16 +12,16 @@ function create_ice_item(x, y) {
 }
 
 let items = [
-    create_ice_item(40, 110),
-    create_ice_item(100, 210),
-    create_ice_item(350, 210),
-    create_ice_item(760, 210),
-    create_ice_item(250, 360),
-    create_ice_item(760, 360),
-    create_ice_item(350, 460),
-    create_ice_item(50, 560),
-    create_ice_item(350, 560),
-    create_ice_item(760, 560)
+    create_ice_item(40, 60),
+    create_ice_item(100, 160),
+    create_ice_item(350, 160),
+    create_ice_item(760, 160),
+    create_ice_item(250, 310),
+    create_ice_item(760, 310),
+    create_ice_item(350, 410),
+    create_ice_item(50, 510),
+    create_ice_item(350, 510),
+    create_ice_item(760, 510)
 ];
 
 loadImages(items_img, function(items_img) {

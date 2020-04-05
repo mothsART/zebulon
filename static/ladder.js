@@ -8,37 +8,37 @@ let ladders_img = {
 let ladders = [
     {
         x: 150,
-        y: 150,
+        y: 100,
         width: 50,
         height: 100
     },
     {
         x: 650,
-        y: 150,
+        y: 100,
         width: 50,
         height: 100
     },
     {
         x: 500,
-        y: 250,
+        y: 200,
         width: 50,
         height: 150
     },
     {
         x: 100,
-        y: 400,
+        y: 350,
         width: 50,
         height: 100
     },
     {
         x: 650,
-        y: 400,
+        y: 350,
         width: 50,
         height: 100
     },
     {
         x: 500,
-        y: 500,
+        y: 450,
         width: 50,
         height: 100
     }

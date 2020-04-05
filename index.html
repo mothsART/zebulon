@@ -3,14 +3,16 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="./static/style.css">
     </head>
-    <body id="debug">
+    <body>
         <div id="game">
             <div class="container">
                 <canvas id="canvas-background" class="pixelated" width="800" height="600"></canvas>
+                <canvas id="canvas-ladders" class="pixelated" width="800" height="600"></canvas>
+                <canvas id="canvas-floor" class="pixelated" width="800" height="600"></canvas>
+
                 <canvas id="canvas-items" class="pixelated" width="800" height="600"></canvas>
                 <canvas id="canvas-gate" class="pixelated" width="800" height="600"></canvas>
-                <canvas id="canvas-ladders" class="pixelated" width="800" height="600"></canvas>
-                
+
                 <canvas id="canvas-slices" class="pixelated" width="800" height="600"></canvas>
                 <div id="score">
                     <span id="nb-items">0</span>
@@ -39,6 +41,7 @@
         <div class="hidden">
             <img id="img-ladder-horizontal" src="./static/ladder_horizontal.png">
             <img id="img-ladder-vertical" src="./static/ladder_vertical.png">
+            <img id="img-floor" src="./static/floor.png">
         </div>
     </body>
     <script src="./static/loadimages.js"></script>
@@ -49,6 +52,7 @@
     <script src="./static/score.js"></script>
     <script src="./static/gate.js"></script>
     <script src="./static/ladder.js"></script>
+    <script src="./static/floor.js"></script>
     <!--<script src="./static/pic.js"></script>-->
     <script src="./static/debug.js"></script>
 </html>

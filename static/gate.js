@@ -4,7 +4,7 @@ let gate_img = ['./static/gate.png'];
 
 let gate = {
     x: 720,
-    y: 430,
+    y: 380,
     width: 60,
     height: 70
 }
