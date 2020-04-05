@@ -27,6 +27,10 @@ canvas {
     image-rendering: crisp-edges;
 }
 
+.hidden {
+    display: none;
+}
+
 /* Intro */
 
 #intro, #game {
