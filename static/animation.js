@@ -10,6 +10,8 @@ let images = {
     zebulon: './static/zebulon.png'
 };
 
+let intro_element = document.getElementById('intro');
+
 loadImages(images, function(images) {
     zebulon.canvas.drawImage(
         images.zebulon,
@@ -23,7 +25,7 @@ loadImages(images, function(images) {
 document.onkeydown = checkKey;
 
 function start_game() {
-    document.getElementById('intro').classList.add('hidden');
+    intro_element.classList.add('hidden');
 }
 
 function move(zebulon, x, y) {
@@ -44,6 +46,12 @@ let gate_is_visible = false;
 
 function checkKey(e) {
     e = e || window.event;
+    if (
+        e.keyCode == '13'
+        && !intro_element.classList.contains('hidden')
+    ) {
+        start_game();
+    }
     if (e.keyCode == '38') {
         //console.log('top');
         move(zebulon, 0, -10);
