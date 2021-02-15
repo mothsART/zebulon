@@ -11,6 +11,7 @@ let images = {
 };
 
 let intro_element = document.getElementById('intro');
+let game_element = document.getElementById('game');
 
 loadImages(images, function(images) {
     zebulon.canvas.drawImage(
@@ -24,8 +25,13 @@ loadImages(images, function(images) {
 
 document.onkeydown = checkKey;
 
+function load_game() {
+    intro_element.classList.remove('hidden');
+}
+
 function start_game() {
     intro_element.classList.add('hidden');
+    game_element.classList.remove('hidden');
 }
 
 function move(zebulon, x, y) {
@@ -42,6 +48,7 @@ function increment_score() {
     nb_items.innerText = parseInt(nb_items.innerText) + 1;
 }
 let catching_items = [];
+let is_right = true;
 let gate_is_visible = false;
 
 function checkKey(e) {
@@ -56,28 +63,44 @@ function checkKey(e) {
         //console.log('top');
         move(zebulon, 0, -10);
     }
-    else if (e.keyCode == '40') {
+    if (e.keyCode == '40') {
         //console.log('bottom');
         move(zebulon, 0, 10);
     }
-    else if (e.keyCode == '37') {
+    if (e.keyCode == '37') {
         //console.log('left');
         move(zebulon, -10, 0);
+        is_right = false;
     }
-    else if (e.keyCode == '39') {
+    if (e.keyCode == '39') {
         //console.log('right');
         move(zebulon, 10, 0);
+        is_right = true;
     }
     loadImages(images, function(images) {
         zebulon.canvas.clearRect(0, 0, 800, 600);
+        if (is_right) {
+            document.getElementById('canvas-slices').classList.remove('invert');
+            zebulon.canvas.translate(
+                zebulon.x - zebulon.width,
+                zebulon.y - zebulon.height
+            );
+        }
+        else {
+            document.getElementById('canvas-slices').classList.add('invert');
+            zebulon.canvas.translate(
+                800 - 2 * zebulon.width - zebulon.x,
+                zebulon.y - zebulon.height
+            );
+        }
         zebulon.canvas.drawImage(
             images.zebulon,
-            zebulon.x,
-            zebulon.y,
             zebulon.width,
             zebulon.height
         );
+        zebulon.canvas.setTransform(1, 0, 0, 1, 0, 0);
     });
+
     loadImages(items_img, function(items_img) {
         for (item of items) {
             if (item_collision(zebulon, catching_items, item)) {

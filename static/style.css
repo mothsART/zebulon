@@ -140,3 +140,7 @@ canvas {
     margin-top: 4%;
     margin-left: 50%;
 }
+
+.invert {
+    transform: scaleX(-1);
+}
