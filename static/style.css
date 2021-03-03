@@ -137,6 +137,7 @@ canvas {
 }
 
 #score {
+    position: absolute;
     margin-top: 4%;
     margin-left: 50%;
 }

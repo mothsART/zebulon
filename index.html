@@ -9,6 +9,7 @@
         <div id="game" class="hidden">
             <div class="container">
                 <canvas id="canvas-background" class="pixelated" width="800" height="600"></canvas>
+                <canvas id="canvas-colision" class="pixelated" width="800" height="600"></canvas>
                 <canvas id="canvas-ladders" class="pixelated" width="800" height="600"></canvas>
                 <canvas id="canvas-floor" class="pixelated" width="800" height="600"></canvas>
 
@@ -46,9 +47,15 @@
             <img id="img-floor" src="./static/floor.png">
         </div>
     </body>
+    <script src="./static/step/level1.js"></script>
+    <script src="./static/step/level2.js"></script>
+
     <script src="./static/loadimages.js"></script>
     <script src="./static/intro.js"></script>
+
+    <script src="./static/background.js"></script>
     <script src="./static/colision.js"></script>
+
     <script src="./static/animation.js"></script>
     <script src="./static/items.js"></script>
     <script src="./static/score.js"></script>
