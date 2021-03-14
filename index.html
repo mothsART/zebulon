@@ -8,18 +8,24 @@
         <h1 class="hidden">Zébulon</h1>
         <div id="game" class="hidden">
             <div class="container">
-                <canvas id="canvas-background" class="pixelated" width="800" height="600"></canvas>
-                <div id="canvas-cloud-1" class="canvas-cloud"></div>
-                <div id="canvas-cloud-2" class="canvas-cloud"></div>
-                <div id="canvas-cloud-3" class="canvas-cloud"></div>
-                
                 <canvas id="canvas-colision" class="pixelated" width="800" height="600"></canvas>
-                <canvas id="canvas-ladders" class="pixelated" width="800" height="600"></canvas>
-                <canvas id="canvas-floor" class="pixelated" width="800" height="600"></canvas>
+                <div id="level-1" class="level hidden">
+                    <canvas id="canvas-background" class="pixelated" width="800" height="600"></canvas>
+                    <div id="canvas-cloud-1" class="canvas-cloud"></div>
+                    <div id="canvas-cloud-2" class="canvas-cloud"></div>
+                    <div id="canvas-cloud-3" class="canvas-cloud"></div>
+                    <canvas id="canvas-ladders-1" class="pixelated" width="800" height="600"></canvas>
+                    <canvas id="canvas-floor-1" class="pixelated" width="800" height="600"></canvas>
+                    <canvas id="canvas-items-1" class="pixelated" width="800" height="600"></canvas>
+                </div>
 
-                <canvas id="canvas-items" class="pixelated" width="800" height="600"></canvas>
+                <div id="level-2" class="level hidden">
+                    <canvas id="canvas-ladders-2" class="pixelated" width="800" height="600"></canvas>
+                    <canvas id="canvas-floor-2" class="pixelated" width="800" height="600"></canvas>
+                    <canvas id="canvas-items-2" class="pixelated" width="800" height="600"></canvas>
+                </div>
+
                 <canvas id="canvas-gate" class="pixelated" width="800" height="600"></canvas>
-
                 <canvas id="canvas-slices" class="pixelated" width="800" height="600"></canvas>
                 <div id="score">
                     <span id="nb-items">0</span>
@@ -51,8 +57,6 @@
             <img id="img-floor" src="./static/floor.png">
         </div>
     </body>
-    <script src="./static/step/level1.js"></script>
-    <script src="./static/step/level2.js"></script>
 
     <script src="./static/loadimages.js"></script>
     <script src="./static/intro.js"></script>
@@ -66,6 +70,9 @@
     <script src="./static/gate.js"></script>
     <script src="./static/ladder.js"></script>
     <script src="./static/floor.js"></script>
+    
+    <script src="./static/step/level1.js"></script>
+    <script src="./static/step/level2.js"></script>
     <!--<script src="./static/pic.js"></script>-->
     <script src="./static/debug.js"></script>
 </html>

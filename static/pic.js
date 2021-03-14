@@ -40,8 +40,8 @@ const pic = {
     }
 }
 
-pic.init('./static/zebulon.png');
-pic.addSlide(0, 0, 70, 50);
-pic.addSlide(75, 0, 70, 50);
-pic.addSlide(140, 0, 70, 50);
-pic.show();
+//pic.init('./static/zebulon.png');
+//pic.addSlide(0, 0, 70, 50);
+//pic.addSlide(75, 0, 70, 50);
+//pic.addSlide(140, 0, 70, 50);
+//pic.show();
