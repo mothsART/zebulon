@@ -7,14 +7,16 @@ function colision_draw(path) {
         ctx.lineTo(rec.x + rec.width, rec.y + rec.height);
         ctx.lineTo(rec.x, rec.y + rec.height);
     }
-    ctx.fillStyle = "pink";
+    ctx.fillStyle = "red";
     ctx.fill();
 }
 
 const colision = {
-    init: function (colision_data) {
+    init: function (colision_data, debug) {
         this.catching_items = [];
         this.colision_data = colision_data;
+        if(debug)
+            colision_draw(colision_path_level_1);
     },
 
     is_in_path: function (rec_player) {

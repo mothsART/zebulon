@@ -140,16 +140,14 @@ let items_level_2 = [
 const level_2 = {
     start: function (debug) {
         level_1_el.classList.remove('hidden');
-        zebulon.init(10, 505);
+        zebulon.init(10, 505, debug);
         gate.init(100, 25);
         score.init();
         items.init(items_level_2);
         ladders.init(ladders_level_2);
         floors.init(floors_level_2);
         colision.init(colision_path_level_2);
-        if(debug) {
-            colision_draw(colision_path_level_2);
-        }
+        colision_draw(colision_path_level_2, debug);
     },
     next: function () {
         console.log('win !');

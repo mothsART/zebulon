@@ -14,6 +14,7 @@ function create_ice_item(x, y) {
 const items = {
     init: function(items_data) {
         this.items_data = items_data;
+        items_canvas.clearRect(0, 0, 800, 600);
         loadImages(items_img, function(items_img) {
             for (item of items_data) {
                 items_canvas.drawImage(
