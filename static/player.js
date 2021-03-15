@@ -6,6 +6,8 @@ const zebulon = {
     canvas_el: document.getElementById('canvas-slices'),
     canvas: document.getElementById('canvas-slices').getContext('2d'),
     init: function (x, y, debug) {
+        this.gravity_id = null;
+        this.gravity_first_fall = true;
         this.debug = debug;
         this.is_right = true;
         this.coord = {
@@ -60,9 +62,13 @@ const zebulon = {
     _move: function (x, y, title) {
         this.coord.x += x;
         this.coord.y += y;
+        if (!this.gravity_id && colision.is_in_path(zebulon.coord, true)) {
+            this.gravity_id = setInterval(this.gravity, 50);
+        }
         if (!colision.is_in_path(zebulon.coord)) {
             this.coord.x -= x;
             this.coord.y -= y;
+            return;
         }
         if (this.debug) {
             console.log(title);
@@ -81,5 +87,19 @@ const zebulon = {
     move_left: function() {
         zebulon._move(-10, 0, 'left');
         zebulon.is_right = false;
+    },
+    gravity: function () {
+        if (
+            !zebulon.gravity_first_fall
+            && colision.is_in_path(zebulon.coord)
+        ) {
+            clearInterval(zebulon.gravity_id);
+            zebulon.gravity_id = null;
+            zebulon.gravity_first_fall = true;
+            return;
+        }
+        zebulon.coord.y += 10;
+        zebulon.refresh();
+        zebulon.gravity_first_fall = false;
     }
 }

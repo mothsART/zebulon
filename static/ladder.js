@@ -1,4 +1,4 @@
-let ladders_canvas = document.getElementById('canvas-ladders-1').getContext('2d');
+let ladders_canvas = document.getElementById('canvas-ladders').getContext('2d');
 
 let ladders_img = {
     horizontal: document.getElementById("img-ladder-horizontal"),

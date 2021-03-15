@@ -8,21 +8,21 @@
         <h1 class="hidden">Zébulon</h1>
         <div id="game" class="hidden">
             <div class="container">
+
                 <div id="level-1" class="level hidden">
                     <canvas id="canvas-background" class="pixelated" width="800" height="600"></canvas>
                     <div id="canvas-cloud-1" class="canvas-cloud"></div>
                     <div id="canvas-cloud-2" class="canvas-cloud"></div>
                     <div id="canvas-cloud-3" class="canvas-cloud"></div>
-                    <canvas id="canvas-ladders-1" class="pixelated" width="800" height="600"></canvas>
-                    <canvas id="canvas-floor-1" class="pixelated" width="800" height="600"></canvas>
-                    <canvas id="canvas-items-1" class="pixelated" width="800" height="600"></canvas>
                 </div>
                 <div id="level-2" class="level hidden">
-                    <canvas id="canvas-ladders-2" class="pixelated" width="800" height="600"></canvas>
-                    <canvas id="canvas-floor-2" class="pixelated" width="800" height="600"></canvas>
-                    <canvas id="canvas-items-2" class="pixelated" width="800" height="600"></canvas>
                 </div>
-                <canvas id="canvas-colision" class="pixelated" width="800" height="600"></canvas>
+                
+                <canvas id="canvas-ladders" class="pixelated" width="800" height="600"></canvas>
+                <canvas id="canvas-floor" class="pixelated" width="800" height="600"></canvas>
+                <canvas id="canvas-items" class="pixelated" width="800" height="600"></canvas>
+                <canvas id="canvas-translation" class="pixelated" width="800" height="600"></canvas>
+                <canvas id="canvas-gravity" class="pixelated" width="800" height="600"></canvas>
 
                 <canvas id="canvas-gate" class="pixelated" width="800" height="600"></canvas>
                 <canvas id="canvas-slices" class="pixelated" width="800" height="600"></canvas>
@@ -70,7 +70,6 @@
     <script src="./static/gate.js"></script>
     <script src="./static/ladder.js"></script>
     <script src="./static/floor.js"></script>
-    <script src="./static/gravity.js"></script>
 
     <script src="./static/step/level1.js"></script>
     <script src="./static/step/level2.js"></script>

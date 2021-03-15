@@ -1,4 +1,4 @@
-let colision_path_level_2 = [
+const colision_path_level_2 = [
     // horizontal
     {
         x: 0,
@@ -7,27 +7,27 @@ let colision_path_level_2 = [
         height: 50
     },
     {
-        x: 200,
+        x: 150,
         y: 200,
-        width: 250,
+        width: 350,
         height: 50
     },
     {
-        x: 600,
+        x: 550,
         y: 200,
-        width: 200,
+        width: 250,
         height: 50
     },
     {
         x: 0,
         y: 350,
-        width: 250,
+        width: 300,
         height: 50
     },
     {
-        x: 650,
+        x: 600,
         y: 350,
-        width: 150,
+        width: 200,
         height: 50
     },
     {
@@ -57,7 +57,7 @@ let colision_path_level_2 = [
     }
 ];
 
-let ladders_level_2 = [
+const ladders_level_2 = [
     {
         x: 0,
         y: 95,
@@ -78,7 +78,7 @@ let ladders_level_2 = [
     }
 ];
 
-let floors_level_2 = [
+const floors_level_2 = [
     {
         x: 50,
         y: 90,
@@ -123,7 +123,52 @@ let floors_level_2 = [
     }
 ];
 
-let items_level_2 = [
+const gravity_level_2 = [
+    {
+        x: 250,
+        y: 50,
+        width: 50,
+        height: 50
+    },
+    {
+        x: 350,
+        y: 50,
+        width: 50,
+        height: 50
+    },
+    {
+        x: 150,
+        y: 200,
+        width: 50,
+        height: 50
+    },
+    {
+        x: 450,
+        y: 200,
+        width: 50,
+        height: 50
+    },
+    {
+        x: 550,
+        y: 200,
+        width: 50,
+        height: 50
+    },
+    {
+        x: 250,
+        y: 350,
+        width: 50,
+        height: 50
+    },
+    {
+        x: 600,
+        y: 350,
+        width: 50,
+        height: 50
+    }
+];
+
+const items_level_2 = [
     create_ice_item(100, 60),
     create_ice_item(450, 60),
     create_ice_item(650, 60),
@@ -133,7 +178,6 @@ let items_level_2 = [
     create_ice_item(150, 360),
     create_ice_item(700, 360),
     create_ice_item(100, 510),
-    create_ice_item(300, 510),
     create_ice_item(600, 510)
 ];
 
@@ -141,13 +185,12 @@ const level_2 = {
     start: function (debug) {
         level_1_el.classList.remove('hidden');
         zebulon.init(10, 505, debug);
-        gate.init(100, 25);
+        gate.init(160, 25);
         score.init();
         items.init(items_level_2);
         ladders.init(ladders_level_2);
         floors.init(floors_level_2);
-        colision.init(colision_path_level_2);
-        colision_draw(colision_path_level_2, debug);
+        colision.init(colision_path_level_2, gravity_level_2, debug);
     },
     next: function () {
         console.log('win !');

@@ -1,4 +1,4 @@
-let colision_path_level_1 = [
+const colision_path_level_1 = [
     // horizontal
     {
         x: 0,
@@ -69,7 +69,7 @@ let colision_path_level_1 = [
     }
 ];
 
-let ladders_level_1 = [
+const ladders_level_1 = [
     {
         x: 150,
         y: 95,
@@ -108,7 +108,7 @@ let ladders_level_1 = [
     }
 ];
 
-let floors_level_1 = [
+const floors_level_1 = [
     {
         x: 0,
         y: 90,
@@ -178,7 +178,7 @@ let floors_level_1 = [
     }
 ];
 
-let items_level_1 = [
+const items_level_1 = [
     create_ice_item(40, 60),
     create_ice_item(100, 160),
     create_ice_item(350, 160),
@@ -200,7 +200,7 @@ const level_1 = {
         items.init(items_level_1);
         ladders.init(ladders_level_1);
         floors.init(floors_level_1);
-        colision.init(colision_path_level_1, debug);
+        colision.init(colision_path_level_1, [], debug);
     },
     next: function () {
         level_2.start();

@@ -1,5 +1,4 @@
-function colision_draw(path) {
-    let ctx = document.getElementById('canvas-colision').getContext('2d');
+function colision_draw(path, ctx, color) {
     ctx.beginPath();
     for (rec of path) {
         ctx.moveTo(rec.x, rec.y);
@@ -7,20 +6,29 @@ function colision_draw(path) {
         ctx.lineTo(rec.x + rec.width, rec.y + rec.height);
         ctx.lineTo(rec.x, rec.y + rec.height);
     }
-    ctx.fillStyle = "red";
+    ctx.fillStyle = color;
     ctx.fill();
 }
 
 const colision = {
-    init: function (colision_data, debug) {
+    canvas_trans_el: document.getElementById('canvas-translation').getContext('2d'),
+    canvas_gravity_el: document.getElementById('canvas-gravity').getContext('2d'),
+
+    init: function (translation_data, gravity_data, debug) {
         this.catching_items = [];
-        this.colision_data = colision_data;
-        if(debug)
-            colision_draw(colision_path_level_1);
+        this.translation_data = translation_data;
+        this.gravity_data = gravity_data;
+        if(debug) {
+            colision_draw(translation_data, this.canvas_trans_el, 'red');
+            colision_draw(gravity_data, this.canvas_gravity_el, 'green');
+        }
     },
 
-    is_in_path: function (rec_player) {
-        for (rec_path of this.colision_data) {
+    is_in_path: function (rec_player, gravity) {
+        let colision_data = this.translation_data;
+        if (gravity)
+            colision_data = this.gravity_data;
+        for (rec_path of colision_data) {
             if (this.is_in_rec(rec_player, rec_path)) {
                 return true;
             }

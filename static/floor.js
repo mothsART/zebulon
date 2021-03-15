@@ -1,4 +1,4 @@
-let floor_canvas = document.getElementById('canvas-floor-1').getContext('2d');
+let floor_canvas = document.getElementById('canvas-floor').getContext('2d');
 
 let floor_img = document.getElementById("img-floor");
 

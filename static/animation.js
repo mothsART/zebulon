@@ -16,7 +16,7 @@ function start_game() {
     intro_element.classList.add('hidden');
     game_element.classList.remove('hidden');
     active_level = level_1;
-    active_level.start(true);
+    active_level.start(false);
 }
 
 function checkKey(e) {

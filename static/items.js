@@ -1,4 +1,4 @@
-let items_canvas = document.getElementById('canvas-items-1').getContext('2d');
+let items_canvas = document.getElementById('canvas-items').getContext('2d');
 
 let items_img = ['./static/ice.png'];
 
