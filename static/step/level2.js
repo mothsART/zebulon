@@ -172,17 +172,21 @@ const items_level_2 = [
     create_ice_item(100, 60),
     create_ice_item(450, 60),
     create_ice_item(650, 60),
-    create_ice_item(350, 210),
     create_ice_item(210, 210),
+    create_ice_item(420, 210),
     create_ice_item(650, 210),
-    create_ice_item(150, 360),
+    create_ice_item(100, 360),
     create_ice_item(700, 360),
     create_ice_item(100, 510),
-    create_ice_item(600, 510)
+    create_ice_item(500, 510)
 ];
+
+let floor_level_2_el = document.getElementById("img-floor-level-2");
+let background_level_2_el = document.getElementById('img-backgroud-level-2');
 
 const level_2 = {
     start: function (debug) {
+        background.show(background_level_2_el);
         level_title.show("Niveau 2");
         level_1_el.classList.remove('hidden');
         zebulon.init(10, 505, debug);
@@ -190,7 +194,7 @@ const level_2 = {
         score.init();
         items.init(items_level_2);
         ladders.init(ladders_level_2);
-        floors.init(floors_level_2);
+        floors.init(floors_level_2, floor_level_2_el);
         colision.init(colision_path_level_2, gravity_level_2, debug);
     },
     next: function () {

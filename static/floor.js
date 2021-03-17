@@ -1,12 +1,10 @@
 let floor_canvas = document.getElementById('canvas-floor').getContext('2d');
 
-let floor_img = document.getElementById("img-floor");
-
-function floor_tiles(img, floor, width) {
+function floor_tiles(floor_img_el, floor, width) {
     let nb_inc = floor.width / width;
     for (let i = 0; i < nb_inc; i++) {
         floor_canvas.drawImage(
-            img,
+            floor_img_el,
             floor.x + i * width,
             floor.y,
             width,
@@ -16,10 +14,10 @@ function floor_tiles(img, floor, width) {
 }
 
 const floors = {
-    init: function (floors_data) {
+    init: function (floors_data, floor_img_el) {
         floor_canvas.clearRect(0, 0, 800, 600);
         for (floor of floors_data) {
-            floor_tiles(floor_img, floor, 50);
+            floor_tiles(floor_img_el, floor, 50);
         }
     }
 }
