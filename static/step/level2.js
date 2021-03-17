@@ -183,6 +183,7 @@ const items_level_2 = [
 
 const level_2 = {
     start: function (debug) {
+        level_title.show("Niveau 2");
         level_1_el.classList.remove('hidden');
         zebulon.init(10, 505, debug);
         gate.init(160, 25);

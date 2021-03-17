@@ -3,6 +3,23 @@ let game_element = document.getElementById('game');
 let level_1_el = document.getElementById('level-1');
 let level_2_el = document.getElementById('level-2');
 
+const level_title = {
+    level_title_el: document.getElementById('level-title'),
+    level_title_strong_el: document.getElementById('level-title__strong'),
+    level_title_font_el: document.getElementById('level-title__font'),
+    lock: false,
+    show: function(title) {
+        level_title.level_title_strong_el.innerText = title;
+        level_title.level_title_font_el.innerText = title;
+        level_title.level_title_el.classList.add('show');
+        level_title.lock = true;
+        setTimeout(this.hidden, 2000);
+    },
+    hidden: function() {
+        level_title.lock = false;
+        level_title.level_title_el.classList.remove('show');
+    }
+}
 
 let active_level = null;
 
@@ -20,6 +37,8 @@ function start_game() {
 }
 
 function checkKey(e) {
+    if (level_title.lock)
+        return;
     e = e || window.event;
     if (
         e.keyCode == '13'

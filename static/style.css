@@ -104,6 +104,7 @@ canvas {
         width: calc((100vw - 133.333333vh) / 2);
         position: absolute;
         z-index: 100;
+        top: 0;
         right: 0;
     }
 
@@ -151,6 +152,53 @@ canvas {
 }
 
 /* game */
+
+#level-title__font, #level-title__strong {
+    font-size: 13vh;
+    position: fixed;
+    text-align: center;
+    width: 100vw;
+    vertical-align: middle;
+    margin: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#level-title__strong {
+    color: #2c0636;
+    padding: 1vh 0 0 1vh;
+}
+
+#level-title #level-title__font,
+#level-title #level-title__strong {
+    display: none;
+}
+
+#level-title.show #level-title__font,
+#level-title.show #level-title__strong {
+    animation: 2s level-title;
+    margin-top: 0;
+    display: block;
+    opacity: 0;
+}
+
+@keyframes level-title {
+    0% {
+        margin-top: -40vh;
+        opacity: 1;
+    }
+    20% {
+        margin-top: 0;
+        opacity: 1;
+    }
+    70% {
+        margin-top: 0;
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
 
 #game .container {
     background: white;
