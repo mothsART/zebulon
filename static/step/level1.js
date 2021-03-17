@@ -191,6 +191,7 @@ const items_level_1 = [
     create_ice_item(760, 510)
 ];
 
+let level_1_el = document.getElementById('level-1');
 let floor_level_1_el = document.getElementById("img-floor-level-1");
 let background_level_1_el = document.getElementById('img-backgroud-level-1');
 

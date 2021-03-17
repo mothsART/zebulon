@@ -181,6 +181,7 @@ const items_level_2 = [
     create_ice_item(500, 510)
 ];
 
+let level_2_el = document.getElementById('level-2');
 let floor_level_2_el = document.getElementById("img-floor-level-2");
 let background_level_2_el = document.getElementById('img-backgroud-level-2');
 
@@ -188,7 +189,7 @@ const level_2 = {
     start: function (debug) {
         background.show(background_level_2_el);
         level_title.show("Niveau 2");
-        level_1_el.classList.remove('hidden');
+        level_2_el.classList.remove('hidden');
         zebulon.init(10, 505, debug);
         gate.init(160, 25);
         score.init();

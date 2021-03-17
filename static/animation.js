@@ -1,8 +1,25 @@
-let level_1_el = document.getElementById('level-1');
-let level_2_el = document.getElementById('level-2');
 let active_level = null;
 
 document.onkeydown = checkKey;
+
+const css_class = {
+    show: function (class_name) {
+        css_class._change(class_name, true);
+    },
+    hidden: function(class_name) {
+        css_class._change(class_name, false);
+    },
+    _change: function(class_name, visible) {
+        var els = document.getElementsByClassName(class_name);
+        Array.prototype.forEach.call(els, function(el) {
+            if (visible) {
+                el.classList.remove('hidden');
+                return;
+            }
+            el.classList.add('hidden');
+        });
+    }
+};
 
 const level_title = {
     level_title_el: document.getElementById('level-title'),
@@ -37,6 +54,7 @@ const game = {
     el: document.getElementById('game'),
     is_playing: false,
     start: function() {
+        css_class.hidden('level');
         game.el.classList.remove('hidden');
         game.is_playing = true;
     },
