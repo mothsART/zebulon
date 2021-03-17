@@ -1,4 +1,3 @@
-let intro_element = document.getElementById('intro');
 let game_element = document.getElementById('game');
 let level_1_el = document.getElementById('level-1');
 let level_2_el = document.getElementById('level-2');
@@ -13,11 +12,38 @@ const level_title = {
         level_title.level_title_font_el.innerText = title;
         level_title.level_title_el.classList.add('show');
         level_title.lock = true;
-        setTimeout(this.hidden, 2000);
+        setTimeout(this.hidden, 1000);
     },
     hidden: function() {
         level_title.lock = false;
         level_title.level_title_el.classList.remove('show');
+    }
+}
+
+const intro = {
+    intro_el: document.getElementById('intro'),
+    is_hidden: true,
+    show: function() {
+        intro.intro_el.classList.remove('hidden');
+        intro.is_hidden = false;
+    },
+    hidden: function() {
+        intro.intro_el.classList.add('hidden');
+        intro.is_hidden = true;
+    }
+}
+
+const end = {
+    end_el: document.getElementById('end'),
+    is_hidden: true,
+    show: function() {
+        game_element.classList.add('hidden');
+        end.end_el.classList.remove('hidden');
+        end.is_hidden = false;
+    },
+    hidden: function() {
+        end.end_el.classList.add('hidden');
+        end.is_hidden = true;
     }
 }
 
@@ -26,14 +52,16 @@ let active_level = null;
 document.onkeydown = checkKey;
 
 function load_game() {
-    intro_element.classList.remove('hidden');
+    intro.show();
 }
 
 function start_game() {
-    intro_element.classList.add('hidden');
+    intro.hidden();
+    end.hidden();
     game_element.classList.remove('hidden');
     active_level = level_1;
     active_level.start(false);
+    
 }
 
 function checkKey(e) {
@@ -42,7 +70,7 @@ function checkKey(e) {
     e = e || window.event;
     if (
         e.keyCode == '13'
-        && !intro_element.classList.contains('hidden')
+        && (intro.is_hidden || end.is_hidden)
     ) {
         start_game();
         return;

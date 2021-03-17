@@ -194,7 +194,7 @@ const level_2 = {
         colision.init(colision_path_level_2, gravity_level_2, debug);
     },
     next: function () {
-        console.log('win !');
+        end.show();
         return this;
     }
 }

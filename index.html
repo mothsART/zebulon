@@ -38,7 +38,7 @@
         </div>
         <div id="intro" class="hidden">
             <div class="container">
-                <div id="intro-text">
+                <div class="start-text">
                     <p>Tu es prêt ?</p>
                     <p>
                         Alors appui sur 
@@ -51,6 +51,23 @@
                 </div>
                 <canvas id="canvas-intro-title" class="pixelated" width="104" height="51"></canvas>
                 <canvas id="canvas-intro" class="pixelated" width="86" height="59"></canvas>
+            </div>
+        </div>
+        <div id="end" class="hidden">
+            <div class="container">
+                <h2 id="end-title">Gagné !</h2>
+                <div class="start-text">
+                    <p>Tu vu rejouer ?</p>
+                    <p>
+                        Alors appui sur 
+                    </p>
+                    <button id="start-game" onclick="start_game();">
+                        Re-commencer
+                    </button>
+                    <p>ou tape sur</p>
+                    <p>la touche <strong>[Entrée]</strong></p>
+                </div>
+                <img id="zebulon-win" src="./static/zebulon_start.png" class="pixelated">
             </div>
         </div>
         <div class="hidden">
