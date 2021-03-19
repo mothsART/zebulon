@@ -194,6 +194,7 @@ const items_level_1 = [
 let level_1_el = document.getElementById('level-1');
 let floor_level_1_el = document.getElementById("img-floor-level-1");
 let background_level_1_el = document.getElementById('img-backgroud-level-1');
+let item_level_1_el = document.getElementById('img-item-level-1');
 
 const level_1 = {
     start: function (debug) {
@@ -202,8 +203,8 @@ const level_1 = {
         level_1_el.classList.remove('hidden');
         zebulon.init(10, 305, debug);
         gate.init(720, 380);
-        score.init();
-        items.init(items_level_1);
+        score.init(item_level_1_el);
+        items.init(items_level_1, item_level_1_el);
         ladders.init(ladders_level_1);
         floors.init(floors_level_1, floor_level_1_el);
         colision.init(colision_path_level_1, [], debug);

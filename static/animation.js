@@ -85,7 +85,7 @@ function start_game() {
     intro.hidden();
     end.hidden();
     game.start();
-    active_level = level_2;
+    active_level = level_1;
     active_level.start(false);
     
 }
