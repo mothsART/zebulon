@@ -190,6 +190,7 @@ const level_2 = {
     start: function (debug) {
         background.show(background_level_2_el);
         level_title.show("Niveau 2");
+        css_class.hidden('level');
         level_2_el.classList.remove('hidden');
         zebulon.init(10, 505, debug);
         gate.init(160, 25);
