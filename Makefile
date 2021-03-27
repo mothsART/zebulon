@@ -7,8 +7,8 @@ build.debian.source:
 	debuild -S #source package : alias of dpkg-buildpackage -rfakeroot -d -us -uc -S
 
 deploy.debian:
-	debuild -S
-	dput ppa:jerem-ferry/tts `/bin/ls -d ../zebulon*.changes`
+	make build.debian.source
+	dput ppa:jerem-ferry/games `/bin/ls -d ../zebulon*.changes`
 
 clean:
 	rm -f MANIFEST
