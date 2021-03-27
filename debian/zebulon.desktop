@@ -9,4 +9,5 @@ Terminal=false
 Type=Application
 Categories=Game;
 Keywords=2d;pixel;fun;education;
-Name[fr_FR]=zebulon.desktop
+Name=Zebulon
+Name[fr_FR]=Zébulon
