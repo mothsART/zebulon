@@ -1,0 +1,14 @@
+Source: zebulon
+Section: education
+Priority: optional
+Maintainer: Jérémie Ferry <jerem.ferry@gmail.com>
+Build-Depends: debhelper (>= 9)
+Homepage: https://mothsart.github.io/labo/frontend/zebulon
+
+Package: zebulon
+Architecture: all
+Depends:
+  firefox | firefox-esr,
+  ${misc:Depends}
+Homepage: https://mothsart.github.io/labo/frontend/zebulon
+Description: a little 2D (Pixel art) game in full web

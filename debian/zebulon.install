@@ -1,0 +1,6 @@
+debian/zebulon.desktop               usr/share/applications
+zebulon                              usr/bin/
+favicon.png                          usr/share/applications/zebulon
+index.html                           usr/share/applications/zebulon
+static/*                             usr/share/applications/zebulon/static
+static/step/*                        usr/share/applications/zebulon/static/step

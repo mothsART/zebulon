@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=0.1
+Name=Zebulon
+Comment=A little 2D (Pixel Art) educative game
+Comment[fr_FR]=Un petit jeu en 2D (pixel art) éducatif
+Exec=zebulon
+Icon=/usr/share/applications/zebulon/favicon.png
+Terminal=false
+Type=Application
+Categories=Game;
+Keywords=2d;pixel;fun;education;
+Name[fr_FR]=zebulon.desktop
