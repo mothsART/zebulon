@@ -10,18 +10,34 @@ const zebulon = {
         this.gravity_first_fall = true;
         this.debug = debug;
         this.is_right = true;
+        this.step_indice = 0;
+        this.gap = 0;
+        this.step = {
+            0: 0,
+            1: 39,
+            2: 78,
+            3: 117,
+            4: 156,
+            5: 194,
+            6: 231,
+            7: 273
+        };
         this.coord = {
             x: x,
             y: y,
-            width: 36,
-            height: 40,
+            width: 40,
+            height: 44,
         };
         this.canvas.clearRect(0, 0, 800, 600);
         loadImages(images, function(images) {
             zebulon.canvas.drawImage(
                 images.zebulon,
+                zebulon.step[zebulon.step_indice],
+                0,
+                zebulon.coord.width,
+                zebulon.coord.height,
                 zebulon.coord.x,
-                zebulon.coord.y,
+                zebulon.coord.y - 3,
                 zebulon.coord.width,
                 zebulon.coord.height
             );
@@ -32,27 +48,40 @@ const zebulon = {
             zebulon.move_top();
         if (key_code == '40')
             zebulon.move_bottom();
-        if (key_code == '37')
+        if (key_code == '37') {
             zebulon.move_left();
-        if (key_code == '39')
+            zebulon.step_indice -= 1;
+            if (zebulon.step_indice < 0)
+                zebulon.step_indice = 7;
+        }
+        if (key_code == '39') {
             zebulon.move_right();
+            zebulon.step_indice += 1;
+            if (zebulon.step_indice >= 8)
+                zebulon.step_indice = 0;
+        }
+
         loadImages(images, function(images) {
             zebulon.canvas.clearRect(0, 0, 800, 600);
-            if (zebulon.is_right) {
+            if (zebulon.is_right && zebulon.canvas_el.classList.contains('invert')) {
                 zebulon.canvas_el.classList.remove('invert');
-                zebulon.canvas.translate(
-                    zebulon.coord.x - zebulon.coord.width,
-                    zebulon.coord.y - zebulon.coord.height
-                );
-            } else {
-                zebulon.canvas_el.classList.add('invert');
-                zebulon.canvas.translate(
-                    800 - 2 * zebulon.coord.width - zebulon.coord.x,
-                    zebulon.coord.y - zebulon.coord.height
-                );
+                zebulon.gap = 0;
             }
+            if (!zebulon.is_right && !zebulon.canvas_el.classList.contains('invert')) {
+                zebulon.canvas_el.classList.add('invert');
+            }
+            move_x = zebulon.coord.x;
+            if (zebulon.canvas_el.classList.contains('invert'))
+                 move_x = 800 - zebulon.coord.width - zebulon.coord.x;
+
             zebulon.canvas.drawImage(
                 images.zebulon,
+                zebulon.step[zebulon.step_indice],
+                0,
+                zebulon.coord.width,
+                zebulon.coord.height,
+                move_x,
+                zebulon.coord.y - 3,
                 zebulon.coord.width,
                 zebulon.coord.height
             );

@@ -94,7 +94,6 @@ function checkKey(e) {
     if (level_title.lock)
         return;
     e = e || window.event;
-    console.log(e.keyCode);
     if (
         e.keyCode == '13' // ENTER
     ) {
